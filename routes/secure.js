@@ -9,7 +9,9 @@ router.post('/login',(req, res) =>{
          password: '1234'   
     };
     if(req.body.username === creds.username && req.body.password === creds.password){
-            res.json({status: 'success', token: jwt.sign({name: 'rh',favColor: 'Green'},secret), redirect: 'admin'});
+            console.log('username' + req.body.username + '\npassword: ' + req.body.password);
+        res.json({status: 'success', token: jwt.sign({name: 'rh',favColor: 'Green'},secret), redirect: 'admin'});
+
     }else{
         res.json({status: 'failure'});
     }
